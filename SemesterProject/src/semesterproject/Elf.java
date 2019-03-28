@@ -1,0 +1,24 @@
+// Semester Project
+// Riley Tucker
+// 11-9-18
+package semesterproject;
+
+
+public class Elf extends FantasyRace {
+    
+    // variables
+    int constituton = 2;
+    int strength = 3;
+    int dexterity = 4;
+    
+    // create a elf
+    Elf() {
+        super();
+    }
+    
+    public void setElfStats() {
+        setCharacterHealth(constituton * 10);
+        setCharacterAttackPower(strength);
+        setCharacterSpeed(dexterity);
+    } 
+}
