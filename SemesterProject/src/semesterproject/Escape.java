@@ -1,17 +1,16 @@
-// Semester Project
-// Riley Tucker
-// 11-1-18
+// -- Project Name --
+// Riley Tucker, Aiden Hutton
+// Karen Stackhouse, Christopher Fields
+// Created On 4/18/2019
 package semesterproject;
 
 
-public class Escape {
-    static Action newAction = new Action();
-    
+public class Escape { 
     
     // start Escape!
     public static void startGame() { 
         // set starting area
-        newAction.setArea(0);
+        Areas.setArea(0);
         Areas.activateArea();
         
         
