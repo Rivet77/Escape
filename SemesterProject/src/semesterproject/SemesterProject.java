@@ -1,7 +1,8 @@
-// Semester Project
-// Take user through a 'choose your own adventure' style story
-// Riley Tucker
-// 10-20-2018
+// -- Project Name --
+// -- Short Description --
+// Riley Tucker, Aiden Hutton
+// Karen Stackhouse, Christopher Fields
+// Created On 4/18/2019
 package semesterproject;
 
 import javafx.application.Application;
@@ -12,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -39,6 +42,9 @@ public class SemesterProject extends Application {
     public static TextField dexterityTF = new TextField();
     public static TextField constitutionTF = new TextField();
     
+    // map image area
+    static ImageView mapIV = new ImageView();
+    
     // textarea
     static TextArea storyOutputTF = new TextArea();
     
@@ -56,22 +62,29 @@ public class SemesterProject extends Application {
     @Override
     public void start(Stage primaryStage) { 
         
-        // create gridpane
-        BorderPane borderPane = new BorderPane();
-        borderPane.setPadding(insets);
+        // create outer borderpane
+        BorderPane outerBorderPane = new BorderPane();
+        outerBorderPane.setPadding(insets);
+        // create inner borderpane for map and story output
+        BorderPane innerBorderPane = new BorderPane();
+        innerBorderPane.setPadding(insets);
         
-        // create top, left, right, bottom, and center boxes
+        // create top, left, right, and bottom boxes for outer pane
         HBox topHBox = new HBox();
-        HBox centerHBox = new HBox();
         HBox bottomHBox = new HBox();
         VBox leftHBox = new VBox();
         VBox rightHBox = new VBox();
+        // create top and bottom boxes for map/story borderpane
+        HBox storyOutputHBox = new HBox();
+        HBox mapHBox = new HBox();
         // set box positions
-        borderPane.setTop(topHBox);
-        borderPane.setLeft(leftHBox);
-        borderPane.setRight(rightHBox);
-        borderPane.setBottom(bottomHBox);
-        borderPane.setCenter(centerHBox);
+        outerBorderPane.setTop(topHBox);
+        outerBorderPane.setLeft(leftHBox);
+        outerBorderPane.setRight(rightHBox);
+        outerBorderPane.setBottom(bottomHBox);
+        outerBorderPane.setCenter(innerBorderPane);
+        innerBorderPane.setTop(mapHBox);
+        innerBorderPane.setBottom(storyOutputHBox);
         
         // add buttons to boxes
         topHBox.getChildren().addAll(goStraightBT, goBackBT);
@@ -80,8 +93,10 @@ public class SemesterProject extends Application {
         // add stats to bottom box
         bottomHBox.getChildren().addAll(attackBT, strengthLB, strengthTF, 
                 dexterityLB, dexterityTF, constitutionLB, constitutionTF, runBT);
-        // add output to center box
-        centerHBox.getChildren().add(storyOutputTF);
+        // add map imageview to top box inside inner borderpane
+        mapHBox.getChildren().add(mapIV);
+        // add output textfield to bottom box inside inner borderpane
+        storyOutputHBox.getChildren().add(storyOutputTF);
         
         // add button functions
         goLeftBT.setOnAction(e -> Action.goLeft());
@@ -89,7 +104,7 @@ public class SemesterProject extends Application {
         goStraightBT.setOnAction(e -> Action.goStraight());
         goBackBT.setOnAction(e -> Action.goBack());
         attackBT.setOnAction(e -> Action.attack());
-        runBT.setOnAction(e -> Action.run());
+        // runBT.setOnAction(e -> Action.run()); ------------------- run() function is under construction
         
         // properties
         // set textfields to read-only
@@ -98,34 +113,43 @@ public class SemesterProject extends Application {
         constitutionTF.setEditable(false);
         //padding
         topHBox.setPadding(insets);
-        centerHBox.setPadding(insets);
         bottomHBox.setPadding(insets);
         leftHBox.setPadding(insets);
         rightHBox.setPadding(insets);
+        storyOutputHBox.setPadding(insets);
+        mapHBox.setPadding(insets);
         // spacing
         topHBox.setSpacing(spacing);
-        centerHBox.setSpacing(spacing);
         bottomHBox.setSpacing(spacing);
         leftHBox.setSpacing(spacing);
         rightHBox.setSpacing(spacing);
+        storyOutputHBox.setSpacing(spacing);
+        mapHBox.setSpacing(spacing);
         //alignment
         topHBox.setAlignment(Pos.CENTER);
-        centerHBox.setAlignment(Pos.CENTER);
         bottomHBox.setAlignment(Pos.CENTER);
         leftHBox.setAlignment(Pos.CENTER);
         rightHBox.setAlignment(Pos.CENTER);
-        // box size
-        storyOutputTF.setMinSize(400, 300);
+        storyOutputHBox.setAlignment(Pos.CENTER);
+        mapHBox.setAlignment(Pos.CENTER);
+        // box sizes
+        storyOutputTF.setMinSize(400, 200);
+        mapIV.setFitWidth(450);
+        mapIV.setFitHeight(300);
         strengthTF.setMaxWidth(statSize);
         dexterityTF.setMaxWidth(statSize);
         constitutionTF.setMaxWidth(statSize);
+        // image view settings
+        mapIV.setPreserveRatio(true);
+        mapIV.setSmooth(true);
+        mapIV.setCache(true);
         // colomn length
         storyOutputTF.setWrapText(true);
         
         // create a scene and put it on stage
-        Scene scene = new Scene(borderPane);
-        primaryStage.setMinHeight(500);
-        primaryStage.setMinWidth(500);
+        Scene scene = new Scene(outerBorderPane);
+        primaryStage.setMinHeight(715);
+        primaryStage.setMinWidth(700);
         primaryStage.setTitle("Escape!");
         primaryStage.setScene(scene);
         primaryStage.show();        
