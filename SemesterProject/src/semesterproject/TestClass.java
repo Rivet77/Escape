@@ -1,6 +1,7 @@
-// Semester Project
-// Riley Tucker
-// 11-9-18
+// -- Project Name --
+// Riley Tucker, Aiden Hutton
+// Karen Stackhouse, Christopher Fields
+// Created On 4/18/2019
 package semesterproject;
 
 
@@ -93,7 +94,7 @@ public class TestClass {
         System.out.println("Goblin Health After Attack: " + Action.getEnemyHealth() + "\n");
         
         // test run
-        Action.run();
+        // Action.run(); --------------------------------------------------------- run() function is under construction
         System.out.println("character health: " + Action.getCharacterHealth());
         System.out.println("enemy health: " + Action.getEnemyHealth());
     }
