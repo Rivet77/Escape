@@ -1,14 +1,14 @@
-// Semester Project
-// Take user through a 'choose your own adventure' style story
-// Riley Tucker
-// 10-20-2018
+// -- Project Name --
+// Riley Tucker, Aiden Hutton
+// Karen Stackhouse, Christopher Fields
+// Created On 4/18/2019
 package semesterproject;
 
 
-public class Areas extends Action {
+public class Areas {
     // set events for each area of the map
-    static Action mapArea = new Action();
-    static Action lastArea = new Action();
+    private static int currentArea;
+    private static int lastArea;
     static boolean beenToZero;
     static boolean beenToTwo;
     static boolean beenToThree;
@@ -18,17 +18,28 @@ public class Areas extends Action {
     static boolean beenToNine;
     static boolean beenToTen;
     
-    //enemies
-    static Orc orc1 = new Orc();
-    static Orc orc2 = new Orc();
-    static Orc orc3 = new Orc();
-    static Goblin goblin1 = new Goblin();
+    // getters
+    public static int getArea() {
+        return currentArea;
+    }
+    public static int getLastArea() {
+        return lastArea;
+    }
+    
+    //setters
+    public static void setArea(int newArea) {
+        currentArea = newArea;
+    }
+    public static void setLastArea(int newArea) {
+        lastArea = newArea;
+    }
+    
     
     // Determine if the player has been to the area before. 
     // If not, display the first-time visit message.
     public static void activateArea() {
         if (Action.getPlayerDead() == false) {
-            switch (mapArea.getArea()) {
+            switch (getArea()) {
                 case 0:
                     //SemesterProject.storyOutputTF.appendText("\nArea 0\n"); 
                     if (beenToZero == false) {
@@ -85,7 +96,6 @@ public class Areas extends Action {
                                 + " table chewing on the last scraps of meat it managed to cook. \n"
                                 + "It notices you walk in and quickly stands up. \n"
                                 + "The orc snarls, “How you get out?” as he starts to approach you.\n\n");
-                        orc1.setOrcStats();
                         beenToSix = true;
                     }
                     break;
@@ -95,7 +105,6 @@ public class Areas extends Action {
                         //first time message
                         SemesterProject.storyOutputTF.appendText("There is an orc counting gold coins. \n"
                                 + "The orc sees you enter and shouts as it stands to its feet.\n\n");
-                        orc2.setOrcStats();
                         beenToSeven = true;
                     }
                     break;
@@ -106,7 +115,6 @@ public class Areas extends Action {
                         SemesterProject.storyOutputTF.appendText("A single goblin is digging through "
                                 + "a crate when he sees you coming through the door. \n"
                                 + "He jumps over the crate and heads toward you.\n\n");
-                        goblin1.setGoblinStats();
                         beenToEight = true;
                     }
                     break;
@@ -128,7 +136,6 @@ public class Areas extends Action {
                         SemesterProject.storyOutputTF.appendText("When you enter, you see an orc taking"
                                 + " its coat off and kicking the remanence of mud from its boots. \n"
                                 + "It sees you, draws its blade, and barks, “Get back in your cell!”\n\n");
-                        orc3.setOrcStats();
                         beenToTen = true;
                     }
                     break;
