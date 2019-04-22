@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -25,10 +24,10 @@ import javafx.stage.Stage;
 
 public class SemesterProject extends Application {
     // buttons
-    private Button goLeftBT = new Button("Go Left");
-    private Button goRightBT = new Button("Go Right");
-    private Button goStraightBT = new Button("Go Straight");
-    private Button goBackBT = new Button("Go Back");
+    private Button goWestBT = new Button("Go West");
+    private Button goEastBT = new Button("Go East");
+    private Button goNorthBT = new Button("Go North");
+    private Button goSouthBT = new Button("Go South");
     private Button attackBT = new Button("Attack");
     private Button runBT = new Button("Run");
     
@@ -87,9 +86,9 @@ public class SemesterProject extends Application {
         innerBorderPane.setBottom(storyOutputHBox);
         
         // add buttons to boxes
-        topHBox.getChildren().addAll(goStraightBT, goBackBT);
-        leftHBox.getChildren().add(goLeftBT);
-        rightHBox.getChildren().add(goRightBT);
+        topHBox.getChildren().addAll(goNorthBT, goSouthBT);
+        leftHBox.getChildren().add(goWestBT);
+        rightHBox.getChildren().add(goEastBT);
         // add stats to bottom box
         bottomHBox.getChildren().addAll(attackBT, strengthLB, strengthTF, 
                 dexterityLB, dexterityTF, constitutionLB, constitutionTF, runBT);
@@ -99,10 +98,10 @@ public class SemesterProject extends Application {
         storyOutputHBox.getChildren().add(storyOutputTF);
         
         // add button functions
-        goLeftBT.setOnAction(e -> Action.goLeft());
-        goRightBT.setOnAction(e -> Action.goRight());
-        goStraightBT.setOnAction(e -> Action.goStraight());
-        goBackBT.setOnAction(e -> Action.goBack());
+        goWestBT.setOnAction(e -> Action.goWest());
+        goEastBT.setOnAction(e -> Action.goEast());
+        goNorthBT.setOnAction(e -> Action.goNorth());
+        goSouthBT.setOnAction(e -> Action.goSouth());
         attackBT.setOnAction(e -> Action.attack());
         // runBT.setOnAction(e -> Action.run()); ------------------- run() function is under construction
         
@@ -143,23 +142,23 @@ public class SemesterProject extends Application {
         mapIV.setPreserveRatio(true);
         mapIV.setSmooth(true);
         mapIV.setCache(true);
-        // colomn length
+        // column length
         storyOutputTF.setWrapText(true);
         
         // create a scene and put it on stage
         Scene scene = new Scene(outerBorderPane);
-        primaryStage.setMinHeight(715);
+        primaryStage.setMinHeight(650);
         primaryStage.setMinWidth(700);
         primaryStage.setTitle("Escape!");
         primaryStage.setScene(scene);
         primaryStage.show();        
         
         // run application
-        run();
+        runGame();
     }
     
     
-    public static void run() {
+    public static void runGame() {
         // welcome player
         storyOutputTF.appendText("Welcome to Escape!\n");
         
@@ -222,7 +221,8 @@ public class SemesterProject extends Application {
         storyOutputTF.setOnKeyPressed((KeyEvent event) -> {
             KeyCode key = event.getCode();
             if (!gameStarted) { 
-                if (key.equals(KeyCode.ENTER)) { 
+                if (key.equals(KeyCode.ENTER)) {
+                    storyOutputTF.appendText("\n\n");
                     Escape.startGame();
                     raceSelected = true;
                     gameStarted = true;
