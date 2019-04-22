@@ -66,5 +66,5 @@ public abstract class FantasyRace {
         characterHealth = getCharacterHealth() ;
         characterAttackPower = getCharacterAttackPower();
         characterSpeed = getCharacterSpeed();
-    }    
+    }
 }
