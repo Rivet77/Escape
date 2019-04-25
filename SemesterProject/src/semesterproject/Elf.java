@@ -8,9 +8,9 @@ package semesterproject;
 public class Elf extends FantasyRace {
     
     // variables
-    int constituton = 2;
-    int strength = 3;
-    int dexterity = 4;
+    int constituton = (Math.random()*((20-1)+1))+1) + 2;
+    int strength = (Math.random()*((20-1)+1))+1) + 3;
+    int dexterity = (Math.random()*((20-1)+1))+1) + 4;
     
     // create a elf
     Elf() {
