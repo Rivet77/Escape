@@ -9,10 +9,10 @@ package semesterproject;
 public class Ogre extends FantasyRace {
     
     // variables
-    int constituton = (Math.random()*((20-1)+1))+1) + 4;
+    int constituton = (int)((Math.random()*((20-1)+1))+1) + 4;
     // this is my swamp now, donkey
-    int strength = (Math.random()*((20-1)+1))+1) + 5;
-    int dexterity = (Math.random()*((20-1)+1))+1) + 1;
+    int strength = (int)((Math.random()*((20-1)+1))+1) + 5;
+    int dexterity = (int)((Math.random()*((20-1)+1))+1) + 1;
     
     // create an ogre
     Ogre() {
