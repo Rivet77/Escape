@@ -19,7 +19,7 @@ public class Ogre extends FantasyRace {
         super();
     }
     
-    public void setGoblinStats() {
+    public void setOgreStats() {
         setEnemyHealth(constituton * 10);
         setEnemyAttackPower(strength);
         setEnemySpeed(dexterity);
