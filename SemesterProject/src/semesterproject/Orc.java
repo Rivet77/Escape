@@ -8,9 +8,9 @@ package semesterproject;
 public class Orc extends FantasyRace {
     
     // variables
-    int constituton = 3;
-    int strength = 4;
-    int dexterity = 2;
+    int constituton = (Math.random()*((20-1)+1))+1) + 3;
+    int strength = (Math.random()*((20-1)+1))+1) + 4;
+    int dexterity = (Math.random()*((20-1)+1))+1) + 2;
     
     // create a orc
     Orc() {
