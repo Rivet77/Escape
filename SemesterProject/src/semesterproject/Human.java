@@ -8,9 +8,9 @@ package semesterproject;
 public class Human extends FantasyRace {
     
     // variables
-    int constituton = 3;
-    int strength = 3;
-    int dexterity = 3;
+    int constituton = (Math.random()*((20-1)+1))+1) + 3;
+    int strength = (Math.random()*((20-1)+1))+1) + 3;
+    int dexterity = (Math.random()*((20-1)+1))+1) + 3;
     
     // create a human
     Human() {
