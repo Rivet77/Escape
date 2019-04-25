@@ -5,7 +5,7 @@
 package semesterproject;
 
 
-public class Ogre extends FantasyRace {
+public class Boss extends FantasyRace {
 
     // variables
     int constituton = (Math.random()*((20-1)+1))+1) + 5;
