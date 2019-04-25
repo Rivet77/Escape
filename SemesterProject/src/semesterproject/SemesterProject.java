@@ -20,6 +20,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 public class SemesterProject extends Application {
@@ -152,6 +154,12 @@ public class SemesterProject extends Application {
         primaryStage.setTitle("Escape!");
         primaryStage.setScene(scene);
         primaryStage.show();        
+        
+        // play music 
+        String totallyNormalMusic = "music.mp3";
+        Media oWo = new Media(new File(totallyNormalMusic).toURI().toString());
+        MediaPlayer whatsThis = new MediaPlayer(oWo);
+        whatsThis.play();
         
         // run application
         runGame();
