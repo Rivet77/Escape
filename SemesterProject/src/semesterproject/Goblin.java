@@ -8,9 +8,9 @@ package semesterproject;
 public class Goblin extends FantasyRace {
     
     // variables
-    int constituton = 2;
-    int strength = 2;
-    int dexterity = 5;
+    int constituton = (Math.random()*((20-1)+1))+1) + 2;
+    int strength = (Math.random()*((20-1)+1))+1) + 2;
+    int dexterity = (Math.random()*((20-1)+1))+1) + 5;
     
     // create a goblin
     Goblin() {
