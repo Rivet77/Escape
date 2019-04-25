@@ -15,7 +15,7 @@ public class Ogre extends FantasyRace {
     int dexterity = (Math.random()*((20-1)+1))+1) + 1;
     
     // create an ogre
-    Ogre {
+    Ogre() {
         super();
     }
     
