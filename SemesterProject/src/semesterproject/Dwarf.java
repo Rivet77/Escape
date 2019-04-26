@@ -8,9 +8,9 @@ package semesterproject;
 public class Dwarf extends FantasyRace {
     
     // variables
-    int constituton = (Math.random()*((20-1)+1))+1) + 4;
-    int strength = (Math.random()*((20-1)+1))+1) + 3;
-    int dexterity = (Math.random()*((20-1)+1))+1) + 2;
+    int constituton = (int) ((Math.random()*((20-1)+1))+1) + 4;
+    int strength = (int) ((Math.random()*((20-1)+1))+1) + 3;
+    int dexterity = (int) ((Math.random()*((20-1)+1))+1) + 2;
     
     // create a dwarf
     Dwarf() {
