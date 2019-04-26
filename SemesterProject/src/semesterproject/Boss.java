@@ -8,9 +8,9 @@ package semesterproject;
 public class Boss extends FantasyRace {
 
     // variables
-    int constituton = (Math.random()*((20-1)+1))+1) + 5;
-    int strength = (Math.random()*((20-1)+1))+1) + 10;
-    int dexterity = (Math.random()*((20-1)+1))+1) + 5;
+    int constituton = (int) ((Math.random()*((20-1)+1))+1) + 5;
+    int strength = (int) ((Math.random()*((20-1)+1))+1) + 10;
+    int dexterity = (int) ((Math.random()*((20-1)+1))+1) + 5;
 
     // create boss
     Boss() {
