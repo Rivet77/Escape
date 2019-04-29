@@ -5,6 +5,8 @@
 // Created On 4/18/2019
 package semesterproject;
 
+
+import java.io.File;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -105,7 +107,7 @@ public class SemesterProject extends Application {
         goNorthBT.setOnAction(e -> Action.goNorth());
         goSouthBT.setOnAction(e -> Action.goSouth());
         attackBT.setOnAction(e -> Action.attack());
-        // runBT.setOnAction(e -> Action.run()); ------------------- run() function is under construction
+        runBT.setOnAction(e -> Action.run());
         
         // properties
         // set textfields to read-only
@@ -156,7 +158,7 @@ public class SemesterProject extends Application {
         primaryStage.show();        
         
         // play music 
-        String totallyNormalMusic = "music.mp3";
+        String totallyNormalMusic = "src/semesterProject/music.mp3";
         Media oWo = new Media(new File(totallyNormalMusic).toURI().toString());
         MediaPlayer whatsThis = new MediaPlayer(oWo);
         whatsThis.play();
