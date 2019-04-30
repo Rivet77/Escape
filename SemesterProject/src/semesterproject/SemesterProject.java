@@ -1,5 +1,10 @@
-// -- Project Name --
-// -- Short Description --
+// IvyTech Dungeon Game
+/* 
+* IvyTech Dungeon Game is a game where the player finds a suspicious cave entrance, then enter the dungeon.
+* The dungeon contains enemies and treasures. The player fights their way through many dungeon rooms
+* and collects upgrades along the way. The player wins the game by making their way to the boss 
+* room and defeating that boss.
+*/
 // Riley Tucker, Aiden Hutton
 // Karen Stackhouse, Christopher Fields
 // Created On 4/18/2019
@@ -233,7 +238,7 @@ public class SemesterProject extends Application {
             if (!gameStarted) { 
                 if (key.equals(KeyCode.ENTER)) {
                     storyOutputTF.appendText("\n\n");
-                    Escape.startGame();
+                    IvyTechDungeonGame.startGame();
                     raceSelected = true;
                     gameStarted = true;
                 }
