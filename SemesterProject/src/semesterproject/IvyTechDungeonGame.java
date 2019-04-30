@@ -1,13 +1,13 @@
-// -- Project Name --
+// IvyTech Dungeon Game
 // Riley Tucker, Aiden Hutton
 // Karen Stackhouse, Christopher Fields
 // Created On 4/18/2019
 package semesterproject;
 
 
-public class Escape { 
+public class IvyTechDungeonGame { 
     
-    // start Escape!
+    // start IvyTech Dungeon Game!
     public static void startGame() { 
         // set starting area
         Areas.setArea(0);
