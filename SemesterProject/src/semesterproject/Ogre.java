@@ -1,5 +1,5 @@
     
-// -- Project Name --
+// IvyTech Dungeon Game
 // Riley Tucker, Aiden Hutton
 // Karen Stackhouse, Christopher Fields
 // Created On 4/25/2019
