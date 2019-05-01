@@ -31,6 +31,7 @@ public class Areas {
 	private static int atkChange;
 	private static int spdChange;
 	private static Random randomGenerator = new Random();
+	private static FantasyRace enemy;
     
     
 	// constructors
@@ -409,25 +410,25 @@ public class Areas {
     	}
     }
     
-    public static void generateEnemies(int roomNum) {    	
+  public static void generateEnemies(int roomNum) {    	
     	if (roomsArray[roomNum] != roomsArray[0]) {
     		// code to set the enemies for the specific room -----------------------------------------------
     		int randomInt = randomGenerator.nextInt(3) + 1;
     		switch (randomInt) {
     		case 1:
-    			Orc orc = new Orc();
+    			enemy = new Orc();
     			break;
     		case 2:
-    			Goblin goblin = new Goblin();
+    			enemy = new Goblin();
     			break;
     		case 3:
-    			Ogre ogre = new Ogre();
+    			enemy = new Ogre();
     			break;
     		}
     		System.out.println("Enemies Here: ");
     	} else if (roomsArray[roomNum] == roomsArray[11]) {
     		// set boss room enemy--------------------------------------------------------------------------
-    		Boss boss = new Boss();
+    		enemy = new Boss();
     	}
     	
     }
