@@ -6,6 +6,8 @@ package semesterproject;
 
 
 import java.io.File;
+import java.util.Random;
+
 import javafx.scene.image.Image;
 
 
@@ -13,13 +15,22 @@ public class Areas {
 	// global variables
     private static int currentArea;
     private static int lastArea;
-    private static String itemName = "";
+    private static String[] itemNames = {"Dagger","Longsword","Buckler","Plate Armor","Leather Armor","Thief Idol","Berserker Stone",
+										"Great Axe","Nibbles, the House Cat","Priestly Vestments","Rapier","Hammer","Well-Crafted Boots",
+										"Assassin Gloves","Spiffy Hat","Sack Lunch","Embarrassing Photos","Some Self-Esteem",
+										"Miniature Mother-in-Law","Elven Nutcracker","Vorpal Sword","Yoga Pants","Book of Mormon",
+										"Gladius, Fair Broadsword"};
+	private static String itemName = "";
     private static boolean[] beenTo = new boolean[26];
     private static boolean[] hasItem = new boolean[26];
     private static boolean[] gottenItem = new boolean[26];
     private static boolean[] enemiesDead = new boolean[26];
     private static Areas[] roomsArray = new Areas[26];
     private static File roomImagePath;
+	private static int hpChange;
+	private static int atkChange;
+	private static int spdChange;
+	private static Random randomGenerator = new Random();
     
     
 	// constructors
@@ -38,7 +49,8 @@ public class Areas {
 		}
 		// If the room has an item, check if the player has gotten the item. If not, set the item.
 		if ((hasItem[area]) && (!gottenItem[area])) {
-			setItemName("itemNameHere"); // get item name from array of item names
+			int itemNum = randomGenerator.nextInt(24) + 0;
+			setItemName(itemNum); // get item name from array of item names
 		}
 		System.out.println("Area " + roomNum + " Created.");
 	}
@@ -75,8 +87,8 @@ public class Areas {
     public static void setGottenItem(int roomNum) {
     	gottenItem[roomNum] = true;
     }
-    private static void setItemName(String item) {
-    	itemName = item;
+    private static void setItemName(int itemNum) {
+    	itemName = itemNames[itemNum];
     }
     private static void setRoomImage(int roomNum) {
     	roomImagePath = new File(("semesterProject/mapRooms/room") + (Integer.toString(roomNum)) + (".jpg"));
@@ -400,9 +412,22 @@ public class Areas {
     public static void generateEnemies(int roomNum) {    	
     	if (roomsArray[roomNum] != roomsArray[0]) {
     		// code to set the enemies for the specific room -----------------------------------------------
+    		int randomInt = randomGenerator.nextInt(3) + 1;
+    		switch (randomInt) {
+    		case 1:
+    			Orc orc = new Orc();
+    			break;
+    		case 2:
+    			Goblin goblin = new Goblin();
+    			break;
+    		case 3:
+    			Ogre ogre = new Ogre();
+    			break;
+    		}
     		System.out.println("Enemies Here: ");
     	} else if (roomsArray[roomNum] == roomsArray[11]) {
     		// set boss room enemy--------------------------------------------------------------------------
+    		Boss boss = new Boss();
     	}
     	
     }
@@ -410,8 +435,225 @@ public class Areas {
     private void pickUpItem(int roomNum) {
     	String item = getItemName();
     	// code to set the stats for the specific item ---------------------------------------------------------
-    	
+    	switch (item) {
+			case "Dagger":
+				hpChange=0;
+				atkChange=1;
+				spdChange=1;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked up a Dagger. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Longsword":
+				hpChange=0;
+				atkChange=3;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Longsword. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Buckler":
+				hpChange=3;
+				atkChange=0;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Buckler. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Plate Armor":
+				hpChange=5;
+				atkChange=0;
+				spdChange=-2;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Plate Armor. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Leather Armor":
+				hpChange=2;
+				atkChange=0;
+				spdChange=2;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Leather Armor. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Thief Idol":
+				hpChange=0;
+				atkChange=2;
+				spdChange=4;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Thief Idol. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Berserker Stone":
+				hpChange=-5;
+				atkChange=10;
+				spdChange=3;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Berserker Stone. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Great Axe":
+				hpChange=0;
+				atkChange=5;
+				spdChange=-2;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Great Axe. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Nibbles, the House Cat":
+				hpChange=1;
+				atkChange=1;
+				spdChange=1;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Nibbles, the House Cat. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Priestly Vestments":
+				hpChange=10;
+				atkChange=-5;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Priestly Vestments. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Rapier":
+				hpChange=0;
+				atkChange=3;
+				spdChange=3;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Rapier. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Hammer":
+				hpChange=0;
+				atkChange=2;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Hammer. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Well-Crafted Boots":
+				hpChange=1;
+				atkChange=0;
+				spdChange=3;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Some Well-Crafted Boots. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Assassin Gloves":
+				hpChange=0;
+				atkChange=3;
+				spdChange=5;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Assassin Gloves. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Spiffy Hat":
+				hpChange=2;
+				atkChange=2;
+				spdChange=2;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Spiffy Hat. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Sack Lunch":
+				hpChange=5;
+				atkChange=0;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up a Sack Lunch. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Embarrassing Photos":
+				hpChange=-3;
+				atkChange=-3;
+				spdChange=3;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Some Embarrassing Photos. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Some Self-Esteem":
+				hpChange=5;
+				atkChange=5;
+				spdChange=5;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Some Self-Esteem. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Miniature Mother-in-Law": 
+				hpChange=3;
+				atkChange=-3;
+				spdChange=-5;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Your Miniature Mother-in-Law. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Elven Nutcracker":
+				hpChange=0;
+				atkChange=1;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Elven Nutcracker. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Vorpal Sword":
+				hpChange=0;
+				atkChange=5;
+				spdChange=7;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Vorpal Sword. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Yoga Pants":
+				hpChange=1;
+				atkChange=0;
+				spdChange=5;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Yoga Pants. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Book of Mormon":
+				hpChange=0;
+				atkChange=0;
+				spdChange=0;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Book of Mormon. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+			case "Gladius, Fair Broadsword":
+				hpChange=1;
+				atkChange=8;
+				spdChange=3;
+				Action.changeCharacterHealth(hpChange);
+				Action.changeCharacterAttack(atkChange);
+				Action.changeCharacterSpeed(spdChange);
+				System.out.println("Picked Up Gladius, Fair Broadsword. Stats Added: " + hpChange + " HP " + atkChange + " ATK " + spdChange + " SPD");
+				break;
+		}
     	setGottenItem(roomNum);
-    	System.out.println("Picked Up Item. Stats Added: ");
+    	
     }
 }
