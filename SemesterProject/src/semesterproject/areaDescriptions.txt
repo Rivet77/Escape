@@ -1,26 +1,26 @@
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
+^You leave the cave, and fresh air fills your lungs. You now stand at the mouth of the dungeon. The entrance is North of you.
+1You come back into the room with crates and barrels stacked in the corner. Some have different markings as though they were originally the property of various people. The supplies were undoubtedly stolen by these bandits. There is a path to the North and East.
+^You come back into the room just North of the cave entrance. There is a small pool of water that has collected from rain flowing down into the cave system. There is a path to the East and West.
+^You come back into the room with a large table pushed close to the wall. Several chairs surround the table on one side. Worn playing card and random trinkets are scattered across the table. There is a path to the North and West.
+^You come back into the room with many beds scattered around. Dirty sheets are thrown over them. This must be were many of the monsters here sleep. There is a path to the North.
+5You enter a room with a bar and a couple shelves on one side. There is a round table surround by several stools on the other side. There is a path to the North and South.
+^You come back into the room with several shelves and other containers. They look to be filled with various supplies including worn cloths and cooking supplies. There is a path to the North and South.
+^You come back into the room with many beds scattered around. Dirty sheets are thrown over them. This must be were many of the monsters here sleep. There is a path to the North.
+^You come back into the room that looks like it is used for archery training. A couple of targets line the wall to the West. Barrels full of arrows and old bows sit on the East side of the room. There is a path to the North, East, and South.
+^You come back into what seems to be another supply room. There are disorganized shelves, crates, and barrels scattered haphazardly around the room. There is a path to the North, East, and West.
+^You come back into the room with two large tables. One circular and one rectangular, each table is surrounded by stools. Small trinkets, cards, and old food lead you to believe that this is a recreational room. There is a path to the East, South, and West. The way to the East is blocked by a large door.
+^You come back into a large chamber. A massive bed is pushed against one wall along with a chest and other supply containers. This is the leader of these bandit's room. There is a path to the East and West.
+^You come back into the room that appears to be empty. You can smell something foul emanating from the North passage. There is a path to the North, East, South, and West. The way to the West is blocked by a large door.
+^You come back into the room with various shelves and a couple of long tables. The smell of old meat and stale bread remind you of how foul the creatures that live here are. They eat food that would make any human ill. There is a path to the East and West.
+^You come back into the room with a table close to the East wall. Old food is placed around the table. It might make you hungry if not for the fact that you can see mold starting to grow on it. There is a path to the North, South, and West.
+^You come back into what looks like a training room. There are two large sparring circles in the center of the room. Dried blood stains the stone floor within the circles. There is a path to the East and South.
+^You come back into the room with various mining supplies. Pickaxes, mining helmets and hammers are stored in crates. Some barrels are filled with raw ores. There is a path to the North, East, South, and West.
+^You come back into the room were a wave of heat washes over you again. A large forge stands against the East wall. Barrels of crudely forged weapons and armor sit against a wall. There is a path to the West.
+^A sickening stench fills your nostrils again. It is almost enough to make you nauseous. Several stalls line the North wall and the rancid smell seems to be emanating from the chamber pots in each stall. You don't know why you thought it was a good idea to come back here. There is a path to the South.
+^You come back into the room with many crates and barrels. They are full of raw ore and mining supplies. Two rickety wheel barrows look like they are used for transporting mined ores. There is a path to the North and South.
+^It is dark here and you can barely see anything. Thanks to the small amount of light coming from the bioluminescent plants, you can make out many barrels and crates scattered around that are full of stone and ore. There is a path to the East and South.
+^You enter another dark mining chamber. The glowing plants light your path. There are mining tools lying about. There is a path to the East and West.
+^You enter another dark mining chamber. There are few bioluminescent plants here, but you can still make your way around the room. More crates used to store stone and ore line the South wall. There is a path to the East and West.
+^You enter another dark mining chamber. Several barrels sit in the center of the room. A few glowing flowers illuminate the chamber walls. There is a path to the East and West.
+^You enter another dark mining chamber. There are several sections of the room that have been carved into. Many bioluminescent plants allow you to see the room well. There is a path to the East and West.
+^It is dark here and you can barely see anything. There are a few plants glowing faintly that allow you to make your way around. A few mining sections are carved out of the North wall. There is a path to the South and West.
